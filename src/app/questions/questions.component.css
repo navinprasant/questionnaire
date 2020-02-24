@@ -1,0 +1,40 @@
+.card-header {
+    background-color:gray;
+    color:#ffffff;
+}
+.invalid-question {
+    border:solid 1px red;
+}
+.card {
+    margin-top:10px;
+}
+#barchart {
+    height:500px !important;
+    width: 100% ! important;
+}
+.btn {
+    margin-top:10px;
+    width:200px;
+    margin-right:10px;
+    background-color:#ffffff;
+    /* color: #ffffff; */
+}
+.btn-submit {
+    border: solid 1px #17b2a8;
+}
+.btn-clear{
+    border: solid 1px #f1f1f1;
+}
+
+.container-fluid {
+    margin-bottom: 10px;
+}
+.hide-chart {
+    display:none;
+}
+.show-chart {
+    display:block;
+}
+.all-question-error {
+    color:red;
+}

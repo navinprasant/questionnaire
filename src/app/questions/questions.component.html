@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>Cricket Trivia</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <form #questionsForm="ngForm">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span *ngFor="let question of questions;let i=index;">
+                            <div class="card"
+                                [ngClass]="{'invalid-question':(wrongAnswer[i] && highLighIncorrectAnswer)}">
+                                <div class="card-header">{{i +1}}. {{ question.question }}</div>
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <div class="col-sm-4">
+                                            <select class="form-control" [(ngModel)]="selectedOptions[i]"
+                                                name="selectedOptions_{{i}}"
+                                                [ngClass]="{'invalid-question':(!selectedOptions[i] && formSubmitted)}">
+                                                <option [value]="undefined" disabled selected>Please select an option</option>
+                                                <option *ngFor="let opt of question.options" [value]="opt">{{ opt }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="card-footer">Footer</div> -->
+                            </div>
+                        </span>
+
+                    </div>
+                </div>
+                <span class="all-question-error" *ngIf='showMissingErrorMessage'>*All the questions should be answered.</span>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-submit" (click)="submitForm()">Submit</button>
+                        <button class="btn btn-clear" (click)="resetForm(questionsForm)">Clear Values</button>
+                    </div>
+                </div>
+                </form>
+        </div>
+        <div class="col-sm-4" >
+            <!-- <angular-d3-bar [id]="barChartId" [data]="barChartData"></angular-d3-bar>  -->
+
+            <!-- <angular-d3-bar [id]="test2" [data]="barChartData" [dataColumns]="dataColumns" [colors]="colors" [yAxisTicks]=10 [width]=400
+            [height]=500  [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'50px'"></angular-d3-bar> -->
+            <div [ngClass]="(showChart)? 'show-chart': 'hide-chart'">
+                <canvas id="barchart">{{ barChart }}</canvas>
+            </div>
+        </div>
+    </div>
+
+</div>

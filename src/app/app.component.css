@@ -1,0 +1,19 @@
+.card-header {
+    background-color:gray;
+    color:#ffffff;
+}
+.invalid-question {
+    border:solid 1px red;
+}
+.card {
+    margin-top:10px;
+}
+#barchart {
+    height:500px !important;
+    width: 100% ! important;
+}
+.btn {
+    margin-top:10px;
+    width:200px;
+    margin-right:10px;
+}
